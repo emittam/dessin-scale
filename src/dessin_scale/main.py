@@ -67,9 +67,12 @@ def save_grid_image(image: Image.Image, out_path: str):
         print("ファイル作成エラー", file=sys.stderr)
         sys.exit(4)
 
-
-if __name__ == '__main__':
+def main():
     args = parse_option()
     img = load_image_file(args.file_path)
     img = draw_grid(img, args.grid_size, args.scale, args.transparent)
     save_grid_image(img, get_save_file_path(args.output_path, args.file_path))
+
+
+if __name__ == '__main__':
+    main()
